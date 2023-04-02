@@ -10,8 +10,9 @@ import SwiftUI
 @main
 struct iNewsOsApp: App {
     var body: some Scene {
+        let newsViewModel = InjectionContainer.shared.container.resolve(NewsViewModel.self)!
         WindowGroup {
-            ContentView()
+            NewsPage(viewModel: newsViewModel)
         }
     }
 }
